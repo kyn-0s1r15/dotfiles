@@ -1,6 +1,7 @@
 # LIST OF GIT DIRECTORIES
 ~/LICENSE
 ~/README.md
+~/install.sh
 ~/.config/gtk-3.0
 ~/.config/hypr
 ~/.config/kitty
