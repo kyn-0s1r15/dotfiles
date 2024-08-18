@@ -11,17 +11,27 @@ REMOTE_REPO="git@github.com:kyn-0s1r15/dotfiles.git"
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
   echo "Starting a new SSH agent..."
   eval "$(ssh-agent -s)"
+else
+  echo "SSH agent is already running."
 fi
 
-# Prompt for SSH key passphrase
+# Check if SSH agent socket is set
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  echo "SSH_AUTH_SOCK is not set. Starting a new SSH agent..."
+  eval "$(ssh-agent -s)"
+fi
+
+# Load SSH key
 ssh-add -l &>/dev/null
 if [ $? -ne 0 ]; then
   echo "SSH key is not loaded. Loading SSH key..."
-  ssh-add
+  ssh-add ~/.ssh/id_ed25519
   if [ $? -ne 0 ]; then
     echo "Failed to load SSH key. Exiting."
     exit 1
   fi
+else
+  echo "SSH key is already loaded."
 fi
 
 # Include external files
@@ -42,7 +52,7 @@ done < "$GITDIRS_FILE"
 # Commit changes for each file individually with a prompt for a message
 for file in $(git diff --cached --name-only); do
   # Prompt for a commit message using the floating window script
-  commit_message=$("$HOME/.scripts/kitty/kiity-prompt-float.sh" --message "Enter commit message for $file:")
+  commit_message=$(eval "$HOME/.scripts/kitty/kiity-prompt-float.sh 'Enter commit message for $file:'")
 
   # Check if commit_message is empty and skip the commit if it is
   if [[ -z "$commit_message" ]]; then
