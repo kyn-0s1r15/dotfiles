@@ -19,7 +19,7 @@ if [ -n "$selected_wallpaper" ]; then
     # Build the full path manually if needed
     wallpaper_path="$IMAGE_DIR$selected_wallpaper"
     wal -i "$wallpaper_path"
-    ~/.scripts/pywal-rgb.sh
+    ~/.scripts/pywal/pywal-rgb.sh
     pkill waybar
     hyprctl dispatch exec waybar
 # Let the user know it's done

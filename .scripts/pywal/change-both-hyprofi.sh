@@ -24,7 +24,7 @@ if [ -n "$selected_wallpaper" ]; then
     hyprctl hyprpaper preload "$wallpaper_path"
     hyprctl hyprpaper wallpaper ",$wallpaper_path"
     wal -i "$wallpaper_path"
-    ~/.scripts/pywal-rgb.sh
+    ~/.scripts/pywal/pywal-rgb.sh
     pkill waybar
     hyprctl dispatch exec waybar
     # Let the user know it's done

@@ -156,6 +156,7 @@
         border: 2px solid @color4-opacity-096;
         border-right: none;
         border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
       }
       #memory {
         background: linear-gradient(to right, @color0-opacity-058, @color0-opacity-049);

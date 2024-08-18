@@ -40,7 +40,7 @@ for color in "${colors[@]}"; do
     if [[ -z "$hex_value" || "$hex_value" == "None" ]]; then
         echo "$color-rgb=Invalid color"
     else
-        rgb_value=$(~/.scripts/hex2rgb.sh "$hex_value")
+        rgb_value=$(~/.scripts/pywal/hex2rgb.sh "$hex_value")
         echo "$color-rgb=$rgb_value" >> "$output_file"
 
         # Remove dots from color names
