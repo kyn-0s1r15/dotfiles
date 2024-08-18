@@ -91,7 +91,7 @@
           "escape" : false,
           "interval" : 1,
           "exec" : "playerctl metadata --format='{{ title }}'",
-          "exec-once" : "/home/kyn/.scripts/waybar-playerctl.sh",
+          "exec-once" : "/home/kyn/.scripts/waybar/playerctl.sh",
           "on-click" : "playerctl play-pause",
         },
 
@@ -133,7 +133,7 @@
           "format-ethernet" : "󰈀 ",
           "format-disconnected" : "󰤭 ",
           "format-icons" : ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-          "on-click" : "kitty ~/.scripts/waybar-network.sh",
+          "on-click" : "kitty ~/.scripts/waybar/network.sh",
         },
     "bluetooth" : {
           "format-on" : "󰂯",
@@ -143,6 +143,6 @@
           "format-connected" : "󰂱 {num_connections}",
           "tooltip-format-connected" : "{device_enumerate}",
           "tooltip-format-enumerate-connected" : "{device_alias}\t{device_address}",
-          "on-click" : "~/.scripts/bluetoothctl.sh",
+          "on-click" : "~/.scripts/waybar/bluetoothctl.sh",
     },
 }
