@@ -1,0 +1,65 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+/* Global properties */
+* {
+    border: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Window settings */
+window {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    x-offset: -100%;  /* Anchor to top-left */
+    y-offset: -100%;  /* Anchor to top-left */
+    anchor: northwest; /* Anchor to top-left corner */
+}
+
+/* List settings 
+list {
+    padding: 0px;
+    margin: 0px;
+    spacing: 10px;
+    orientation: horizontal;
+    columns: 4;
+    max-height: 100%;
+}
+*/
+
+/* Element settings */
+element {
+    orientation: vertical;
+    children: [ element-icon, element-text ];
+    spacing: 5px;
+    background-color: transparent;
+    width: 200px;
+}
+
+/* Icon settings */
+element-icon {
+    size: 68ch;
+    width: 1280px;
+    height: 800px;
+    margin: 0px;
+}
+
+/* Text settings */
+element-text {
+    font: "sans 12";
+    color: @foreground;
+    margin: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Hide unused elements */
+prompt, message, scrollbar {
+    enabled: false;
+}
+

@@ -1,0 +1,215 @@
+
+@import url("/home/kyn/.cache/wal/colors-waybar.css");
+@import url("/home/kyn/.cache/wal/colors-waybar-rgb.css");
+* {
+      font-family: Material Design Icons, FantasqueSansM Nerd Font ;
+      font-size: 13px;
+      border: none;
+      padding: 1px;
+      }
+      #waybar {
+        margin: 0 5px 0 5px;
+      }
+      #custom-power {
+        color: @color13;
+        padding: 0 0.5rem 0 0.5rem;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #backlight {
+        background: linear-gradient(to left, @color0-opacity-052, @color0-opacity-044);
+        border-radius: 50px 0 0 10px; 
+        color: @color7;
+        padding: 0 0.5rem 0 1rem;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #battery {
+        background: linear-gradient(to left, @color0-opacity-060, @color0-opacity-052);
+        color: @color14;
+        padding: 0 0.5rem 0 0.5rem; 
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #battery.warning {
+        color: @color10;
+      }
+      #battery.critical {
+        color: @color9;
+      }
+      #battery.critical:not(.charging) {
+        color: @color8;
+      }
+      #battery.charging { 
+        color: @color7;
+      }
+      #battery.full {
+        color: @color14;
+      }
+      #battery.plugged {
+        color: @color13;
+      }
+      @keyframes blink {
+        to {
+          color: @color13;
+        }
+      }
+      #workspaces {
+        background: linear-gradient(to left, @color0-opacity-096, @color0-opacity-060);
+        border-radius: 0 10px 75px 0;
+        padding: 0 1.5rem 0 0.5rem;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #workspaces button {
+        border-radius: 1rem;
+        box-shadow: inset 0 -4px transparent;
+        color: @color2;
+        padding: 0.2rem;
+        transition: all 0.0s;
+      }
+      #workspaces button.active {
+        border-radius: 1rem;
+        color: @color13;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      /* If workspaces is the leftmost module, omit left margin */
+      .modules-left > widget:first-child > #workspaces {
+        margin-left: 0;
+      }
+      /* If workspaces is the rightmost module, omit right margin */
+      .modules-right > widget:last-child > #workspaces {
+        margin-right: 0;
+      }
+      #workspaces button:hover {
+        border-radius: 1rem;
+        color: @color4;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #window {
+        border-radius: 50px 10px 75px 25px;
+        background: linear-gradient(to left, @color0-opacity-069, @color0-opacity-044);
+        color: @color14;
+        padding: 0 1rem 0 1rem;
+        border: 2px solid @color4-opacity-069;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      window#waybar {
+        background-color: transparent;
+        color: @color0;
+        transition-duration: 0.4s;
+        transition-property: background-color;
+      }
+      window#waybar.hidden {
+        opacity: 0.1;
+      }
+      window#waybar.empty #window {
+        background-color: transparent;
+      }
+
+      #clock {
+        background: radial-gradient(ellipse at center, @color0-opacity-069, @color0-opacity-044);
+        border-radius: 22px 22px 69px 69px;
+        color: @color7;
+        margin: 0 1.4rem 0 0.4rem;
+        padding: 0 1.5rem 0 1.5rem;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+
+      #custom-music {
+        background: linear-gradient(to right, @color0-opacity-069, @color0-opacity-044);
+        border-radius: 10px 50px 10px 50px;
+        color: @color14;
+        padding: 0 1rem 0 1rem;
+        border: 2px solid @color4-opacity-069;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #pulseaudio {
+        background: linear-gradient(to right, @color0-opacity-096, @color0-opacity-069);
+        border-radius: 10px 0 0 50px;
+        color: @color8;
+        padding: 0 0.5rem 0 1.5rem;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #pulseaudio.muted {
+        color: @color0;
+      }
+      #cpu {
+        background: linear-gradient(to right, @color0-opacity-069, @color0-opacity-058);
+        color: @color12;
+        padding: 0 0.5rem 0 0.5rem;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+      }
+      #memory {
+        background: linear-gradient(to right, @color0-opacity-058, @color0-opacity-049);
+        color: @color11;
+        padding: 0 0.5rem 0 0.5rem;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #temperature {
+        background: linear-gradient(to right, @color0-opacity-049, @color0-opacity-044);
+        border-radius: 0 50px 10px 0;
+        color: @color10;
+        padding: 0 1.5rem 0 0.5rem;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #network {
+        color: @color8;
+        padding: 0 0.5rem 0 1rem;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #network.disconnected {
+        color: @color10;
+      }
+      #bluetooth {
+        color: @color2;
+        padding: 0 1rem 0 0.5rem;
+        text-shadow: -0.2px -0.2px 0 @color6-opacity-069, 0.2px -0.2px 0 @color6-opacity-069, -0.2px 0.2px 0 @color6-opacity-069, 0.2px 0.2px 0 @color6-opacity-069;
+      }
+      #bluetooth.connected {
+        color: @color9;
+      }
+      tooltip {
+        font-family: "FantasqueSansM Nerd Font";
+        background-color: @color4;
+        padding: 0.5em;
+        opacity: 0.8;
+        font-size: 12px;
+      }
+      tooltip label {
+        font-family: "FantasqueSansM Nerd Font";
+        border-radius: 4px;
+        padding: 0.5em;
+        opacity: 0.8;
+        font-size: 12px;
+      }
+      label:focus {
+        background-color: @color4;
+        border-radius: 4px;
+        padding: 0.5em;
+        opacity: 0.8;
+        font-size: 12px;
+      }

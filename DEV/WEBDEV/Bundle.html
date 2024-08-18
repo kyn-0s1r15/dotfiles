@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Bundle Selection</title>
+    <style>
+        .arrow {
+            display: inline-block;
+            cursor: pointer;
+            width: 1.2em;
+            height: 1.2em;
+            border: solid black;
+            border-width: 0 0.2em 0.2em 0;
+            padding: 0.2em;
+            transform: rotate(45deg);
+            transition: transform 0.2s;
+        }
+        input[type="checkbox"].hiddenToggle {
+            display: none;
+        }
+        input[type="checkbox"].hiddenToggle:checked + .arrow {
+            transform: rotate(225deg);
+        }
+        .description, .technical-details {
+            display: none;
+            margin-left: 1.5em;
+        }
+        input[type="checkbox"].hiddenToggle:checked + .arrow + .description, 
+        input[type="checkbox"].hiddenToggle:checked + .arrow + .technical-details {
+            display: block;
+        }
+        .product-group {
+            border-color: #4F5959;
+            border-width: 2px;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            justify-content: space-between;
+        }
+        .product-info {
+            border: 2px solid #4F5959;
+            border-radius: 8px;
+            padding: 10px;
+            margin-left: 10px;
+            flex: 1;
+        }
+        .product-gallery {
+            margin-right: 10px;
+        }
+        #total {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wp-block-group has-border-color" style="border-color:#4F5959;border-width:2px;border-radius:8px;padding:10px;">
+        <h2 class="wp-block-heading">Bundle Name</h2>
+
+        <form id="interestsForm">
+            
+            <div class="product-group">
+                <figure class="wp-block-gallery has-nested-images columns-default is-cropped product-gallery">
+                    <!-- Image goes here -->
+                    <img src="image1.jpg" alt="Sports">
+                </figure>
+                <div class="product-info">
+                    <h2 class="wp-block-heading has-text-align-left has-system-sans-serif-font-family">Sports</h2>
+                    <p>Price: R10.00</p>
+
+                    <label>
+                        <input type="checkbox" id="descToggle1" class="hiddenToggle">
+                        <span class="arrow"></span>
+                        <span>Description</span>
+                    </label>
+                    <div class="description">Includes activities like football, basketball, and tennis.</div>
+
+                    <label>
+                        <input type="checkbox" id="techToggle1" class="hiddenToggle">
+                        <span class="arrow"></span>
+                        <span>Technical Details</span>
+                    </label>
+                    <div class="technical-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" id="interest1" class="item" name="interests[sports]" value="10.00"> Select Sports
+                    </label>
+                </div>
+            </div>
+
+            <div class="product-group">
+                <figure class="wp-block-gallery has-nested-images columns-default is-cropped product-gallery">
+                    <!-- Image goes here -->
+                    <img src="image2.jpg" alt="Music">
+                </figure>
+                <div class="product-info">
+                    <h2 class="wp-block-heading has-text-align-left has-system-sans-serif-font-family">Music</h2>
+                    <p>Price: R20.00</p>
+
+                    <label>
+                        <input type="checkbox" id="descToggle2" class="hiddenToggle">
+                        <span class="arrow"></span>
+                        <span>Description</span>
+                    </label>
+                    <div class="description">Involves playing instruments, singing, and listening to music.</div>
+
+                    <label>
+                        <input type="checkbox" id="techToggle2" class="hiddenToggle">
+                        <span class="arrow"></span>
+                        <span>Technical Details</span>
+                    </label>
+                    <div class="technical-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" id="interest2" class="item" name="interests[music]" value="20.00"> Select Music
+                    </label>
+                </div>
+            </div>
+
+            <div class="product-group">
+                <figure class="wp-block-gallery has-nested-images columns-default is-cropped product-gallery">
+                    <!-- Image goes here -->
+                    <img src="image3.jpg" alt="Movies">
+                </figure>
+                <div class="product-info">
+                    <h2 class="wp-block-heading has-text-align-left has-system-sans-serif-font-family">Movies</h2>
+                    <p>Price: R15.00</p>
+
+                    <label>
+                        <input type="checkbox" id="descToggle3" class="hiddenToggle">
+                        <span class="arrow"></span>
+                        <span>Description</span>
+                    </label>
+                    <div class="description">Enjoying films of various genres including action, drama, and comedy.</div>
+
+                    <label>
+                        <input type="checkbox" id="techToggle3" class="hiddenToggle">
+                        <span class="arrow"></span>
+                        <span>Technical Details</span>
+                    </label>
+                    <div class="technical-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" id="interest3" class="item" name="interests[movies]" value="15.00"> Select Movies
+                    </label>
+                </div>
+            </div>
+
+            <div id="total">Total: R0.00</div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"].item');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', calculateTotal);
+            });
+            calculateTotal(); // Initial calculation
+
+            document.querySelector('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                submitForm();
+            });
+        });
+
+        function calculateTotal() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"].item');
+            let total = 0;
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    total += parseFloat(checkbox.value);
+                }
+            });
+            document.getElementById('total').innerText = 'Total: R' + total.toFixed(2);
+        }
+
+        function submitForm() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"].item');
+            let selectedInterests = [];
+            let total = 0;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    total += parseFloat(checkbox.value);
+                    const label = checkbox.parentElement.parentElement.querySelector('h2').innerText;
+                    selectedInterests.push({name: label, value: parseFloat(checkbox.value)});
+                }
+            });
+
+            const data = {
+                interests: selectedInterests,
+                total: total.toFixed(2)
+            };
+
+            fetch('backend_script.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert(result);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error with your submission. Please try again.');
+            });
+        }
+    </script>
+</body>
+</html>

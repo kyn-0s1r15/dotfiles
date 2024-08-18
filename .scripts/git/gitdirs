@@ -1,0 +1,18 @@
+# LIST OF GIT DIRECTORIES
+~/LICENSE
+~/README.md
+~/.config/gtk-3.0
+~/.config/hypr
+~/.config/kitty
+~/.config/powerlevel10k
+~/.config/rofi
+~/.config/wal
+~/.config/waybar
+~/.icons
+~/.local/share/applications
+~/.oh-my-zsh
+~/.scripts
+~/DEV
+~/.p10k.zsh
+~/.zshrc
+/etc/nixos/configuration.nix
