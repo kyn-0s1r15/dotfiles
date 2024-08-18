@@ -41,7 +41,7 @@ cp /etc/nixos/configuration.nix $HOME/.config/nixos/configuration.nix
 while IFS= read -r dir; do
   # Skip lines that are empty or start with a comment
   [[ -z "$dir" || "$dir" =~ ^# ]] && continue
-  
+
   # Expand the path
   expanded_dir=$(eval echo "$dir")
   
@@ -49,7 +49,7 @@ while IFS= read -r dir; do
   git add "$expanded_dir"
 done < "$GITDIRS_FILE"
 
-# Commit changes for each file individually with a prompt for a message
+# Prompt for commit messages and commit each file individually
 for file in $(git diff --cached --name-only); do
   # Prompt for a commit message using the floating window script
   commit_message=$(eval "$HOME/.scripts/kitty/kiity-prompt-float.sh 'Enter commit message for $file:'")
