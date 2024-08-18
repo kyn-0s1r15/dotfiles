@@ -15,4 +15,4 @@
 ~/DEV
 ~/.p10k.zsh
 ~/.zshrc
-/etc/nixos/configuration.nix
+~.config/nixos/configuration.nix
