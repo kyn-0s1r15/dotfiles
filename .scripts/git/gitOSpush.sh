@@ -7,6 +7,23 @@ GITDIRS_FILE="$HOME/.scripts/git/gitdirs"
 # Remote repository URL
 REMOTE_REPO="git@github.com:kyn-0s1r15/dotfiles.git"
 
+# Start SSH agent if not already running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+  echo "Starting a new SSH agent..."
+  eval "$(ssh-agent -s)"
+fi
+
+# Prompt for SSH key passphrase
+ssh-add -l &>/dev/null
+if [ $? -ne 0 ]; then
+  echo "SSH key is not loaded. Loading SSH key..."
+  ssh-add
+  if [ $? -ne 0 ]; then
+    echo "Failed to load SSH key. Exiting."
+    exit 1
+  fi
+fi
+
 # Include external files
 cp /etc/nixos/configuration.nix $HOME/.config/nixos/configuration.nix
 
