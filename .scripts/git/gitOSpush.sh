@@ -22,8 +22,14 @@ while IFS= read -r dir; do
   git add "$expanded_dir"
 done < "$GITDIRS_FILE"
 
-# Commit the changes
-git commit -m "Add directories from ~/.scripts/git/gitdirs"
+# Iterate over each staged file and prompt for a commit message
+for file in $(git diff --cached --name-only); do
+  echo "Enter commit message for $file:"
+  read -r message
+  
+  # Commit the changes with the user-provided message
+  git commit -m "$message" "$file"
+done
 
 # Push the changes to the remote repository
 git push dotfiles main
