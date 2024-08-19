@@ -142,14 +142,12 @@
           "format-disabled" : "",
           "format-connected" : "󰂱 {num_connections}",
           "tooltip-format-connected" : "{device_enumerate}",
-=======
           "format-connected" : "󰂯",
           "format-disconnected" : "󰂲",
 //          "format-defualt" : "󰂲",
 //          "format-disabled" : "",
 //          "format-connected" : "󰂱",
           "tooltip-format-connected" : "{device_enumerate} {num_connections}",
->>>>>>> ff2f17a (Add directories from ~/.scripts/git/gitdirs)
           "tooltip-format-enumerate-connected" : "{device_alias}\t{device_address}",
           "on-click" : "~/.scripts/waybar/bluetoothctl.sh",
     },
