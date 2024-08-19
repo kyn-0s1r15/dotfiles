@@ -4,7 +4,7 @@
 * {
     border: 0px;
     border-radius: 0px;
-    margin: 0px;
+    margin: 12px;
     padding: 0px;
 }
 
@@ -43,7 +43,7 @@ element {
 
 /* Icon settings */
 element-icon {
-    size: 68ch;
+    size: 57ch;
     width: 1280px;
     height: 800px;
     margin: 0px;
