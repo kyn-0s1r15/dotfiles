@@ -136,7 +136,6 @@
           "on-click" : "kitty ~/.scripts/waybar/network.sh",
         },
     "bluetooth" : {
-<<<<<<< HEAD
           "format-on" : "󰂯",
           "format-off" : "󰂲",
           "format-defualt" : "󰂲",
