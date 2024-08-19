@@ -3,7 +3,11 @@
 /* Global properties */
 * {
     border: 0px;
+<<<<<<< HEAD
     border-radius: 0px;
+=======
+    border-radius: 2px;
+>>>>>>> ff2f17a (Add directories from ~/.scripts/git/gitdirs)
     margin: 12px;
     padding: 0px;
 }
@@ -43,7 +47,11 @@ element {
 
 /* Icon settings */
 element-icon {
+<<<<<<< HEAD
     size: 57ch;
+=======
+    size: 44ch;
+>>>>>>> ff2f17a (Add directories from ~/.scripts/git/gitdirs)
     width: 1280px;
     height: 800px;
     margin: 0px;
