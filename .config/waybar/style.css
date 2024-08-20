@@ -5,10 +5,7 @@
       font-family: Material Design Icons, FantasqueSansM Nerd Font ;
       font-size: 13px;
       border: none;
-      padding: 1px;
-      }
-      #waybar {
-        margin: 0 5px 0 5px;
+      padding: 0px;
       }
       #custom-power {
         color: @color13;
@@ -193,6 +190,23 @@
       #bluetooth.connected {
         color: @color9;
       }
+
+      #wlr-taskbar {
+        background: radial-gradient(ellipse at center, @color0-opacity-096, @color0-opacity-069);
+        border-radius: 22px 22px 69px 69px;
+        color: @color7;
+        margin: 0;
+        padding: 0;
+        border: 2px solid @color4-opacity-096;
+        border-right: none;
+        border-left: none;
+        text-shadow: 
+          -0.2px -0.2px 0 @color6-opacity-069, 
+          0.2px -0.2px 0 @color6-opacity-069, 
+          -0.2px 0.2px 0 @color6-opacity-069, 
+          0.2px 0.2px 0 @color6-opacity-069;
+      }
+
       tooltip {
         font-family: "FantasqueSansM Nerd Font";
         background-color: @color4;
