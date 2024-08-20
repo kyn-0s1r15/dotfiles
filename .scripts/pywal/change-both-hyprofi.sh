@@ -2,14 +2,14 @@
 #!/bin/bash
 
 # Directory containing images
-IMAGE_DIR=~/Pictures/Wallpapers/
+IMAGE_DIR=$HOME/Pictures/Wallpapers/
 
 # Generate rofi input with images as icons
 selected_wallpaper=$(for IMAGE in "$IMAGE_DIR"*; do
     FILE_NAME=$(basename "$IMAGE")
     # Print the filename and icon path with correct delimiter
     printf "%s\x00icon\x1f%s\n" "$FILE_NAME" "$IMAGE"
-done | rofi -dmenu -i -theme ~/.config/rofi/config-wallpapers.rasi)
+done | rofi -dmenu -i -theme $HOME/.config/rofi/config-wallpapers.rasi)
 
 # Debugging output: Print the full output
 echo "Full rofi output: $selected_wallpaper" >&2
@@ -24,7 +24,7 @@ if [ -n "$selected_wallpaper" ]; then
     hyprctl hyprpaper preload "$wallpaper_path"
     hyprctl hyprpaper wallpaper ",$wallpaper_path"
     wal -i "$wallpaper_path"
-    ~/.scripts/pywal/pywal-rgb.sh
+    $HOME/.scripts/pywal/pywal-rgb.sh
     pkill waybar
     hyprctl dispatch exec waybar
     # Let the user know it's done
