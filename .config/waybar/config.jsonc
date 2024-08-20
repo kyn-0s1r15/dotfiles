@@ -1,13 +1,13 @@
 // -*- mode: jsonc -*-
+[
 {
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
         // "height": 30, // Waybar height (to be removed for auto height)
         // "width": 1280, // Waybar width
         "max-height" : 1,
         "layer" : "bottom",
         //"spacing": 4, // Gaps between modules (4px)
         "position" : "top",
-        "margin-top" : 7,
+        "margin-top" : 4,
         "margin-bottom" :-4,
 
         "modules-left" : [ "custom/power", "backlight", "battery", "hyprland/workspaces", "hyprland/window" ],
@@ -87,7 +87,7 @@
         "custom/music" : {
           "format" : "  {}",
           "min-length": 4,
-          "max-length": 69,
+//          "max-length": 69,
           "escape" : false,
           "interval" : 1,
           "exec" : "playerctl metadata --format='{{ title }}'",
@@ -151,4 +151,35 @@
           "tooltip-format-enumerate-connected" : "{device_alias}\t{device_address}",
           "on-click" : "hyprctl dispatch exec '[float] kitty ~/.scripts/waybar/bluetoothctl.sh'",
     },
-}
+  },
+  {
+    // "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "max-height" : 1,
+    "layer" : "bottom",
+    //"spacing": 4, // Gaps between modules (4px)
+    "position" : "bottom",
+    "margin-top" : -4,
+    "margin-bottom" :4,
+    "modules-left" : [ ],
+    "modules-center" : [ "wlr/taskbar"],
+    "modules-right" : [ ],
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 44, // Set the icon size here
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "ignore-list": [ "Alacritty" ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    },
+  },
+  },
+]
