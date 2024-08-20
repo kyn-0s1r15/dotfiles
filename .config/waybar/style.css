@@ -115,7 +115,7 @@
       }
 
       #clock {
-        background: radial-gradient(ellipse at center, @color0-opacity-069, @color0-opacity-044);
+        background: radial-gradient(ellipse at center, @color0-opacity-096, @color0-opacity-069);
         border-radius: 22px 22px 69px 69px;
         color: @color7;
         margin: 0 1.4rem 0 0.4rem;
