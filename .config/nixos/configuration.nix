@@ -10,25 +10,23 @@ config = {
 #  boot.loader.timeout = 4;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-#  boot.kernelParams = [ "tsc=unstable" "vga=current" "vt.global_cursor_default=0" "boot.shell_on_fail" "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+  boot.kernelParams = [ "tsc=unstable" "vga=current" "vt.global_cursor_default=0" "boot.shell_on_fail" "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
   boot.initrd.systemd.dbus.enable = true;
-#  services.kmscon.enable = true;
-#  services.kmscon.hwRender = true;
-#  services.picom.vSync = true;
-
-#  nixpkgs.config.nvidia.acceptLicense = true;
-#  hardware.opengl.enable = true;
-#  hardware.opengl.driSupport = true;
-#  hardware.opengl.driSupport32Bit = true;
-#  hardware.opengl.extraPackages = with pkgs; [ intel-ocl intel-vaapi-driver ];
-#  hardware.opengl.extraPackages32 = with pkgs; [ intel-vaapi-driver ];
-#  hardware.nvidia.powerManagement.enable = true;
-#  hardware.nvidia.open = false;
-#  hardware.nvidia.modesetting.enable = true;
-#  hardware.nvidia.nvidiaSettings = true;
-#  services.xserver.videoDrivers = [ "modesetting" "fbdev" "nvidia-340xx-dkms" ];
-#  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_340;
+  services.kmscon.enable = true;
+  services.kmscon.hwRender = true;
+  services.picom.vSync = true;
+  nixpkgs.config.nvidia.acceptLicense = true;
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages = with pkgs; [ intel-ocl intel-vaapi-driver ];
+  hardware.opengl.extraPackages32 = with pkgs; [ intel-vaapi-driver ];
+  hardware.nvidia.powerManagement.enable = true;
+  hardware.nvidia.open = false;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.nvidiaSettings = true;
+  services.xserver.videoDrivers = [ "modesetting" "fbdev" "nvidia-340xx-dkms" ];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_340;
 #  boot.extraModulePackages = [ config.boot.kernelPackages.nvidiaPackages.legacy_340 ];
 
   networking.hostName = "nixos"; # Define your hostname.
