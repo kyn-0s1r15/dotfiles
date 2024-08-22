@@ -173,6 +173,7 @@
     "on-click": "activate",
     "on-click-right": "close",
     "ignore-list": [ "Alacritty" ],
+    "sort-by-app-id": true,
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     },
