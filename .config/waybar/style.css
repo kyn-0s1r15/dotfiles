@@ -191,12 +191,12 @@
         color: @color9;
       }
 
-      #wlr-taskbar {
+      #taskbar {
         background: radial-gradient(ellipse at center, @color0-opacity-096, @color0-opacity-069);
         border-radius: 22px 22px 69px 69px;
         color: @color7;
         margin: 0;
-        padding: 0;
+        padding: 0 1rem 0 1rem;
         border: 2px solid @color4-opacity-096;
         border-right: none;
         border-left: none;
@@ -205,6 +205,18 @@
           0.2px -0.2px 0 @color6-opacity-069, 
           -0.2px 0.2px 0 @color6-opacity-069, 
           0.2px 0.2px 0 @color6-opacity-069;
+      }
+#taskbar button {
+      }
+#taskbar button.active {
+      }
+#taskbar button.minimized {
+      }
+#taskbar button.maximized {
+      }
+#taskbar button.fullscreen {
+      }
+#taskbar.empty {
       }
 
       tooltip {
