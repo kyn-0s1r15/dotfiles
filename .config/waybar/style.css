@@ -193,7 +193,7 @@
 
       #taskbar {
         background: radial-gradient(ellipse at center, @color0-opacity-096, @color0-opacity-069);
-        border-radius: 22px 22px 69px 69px;
+        border-radius: 69px 69px 22px 22px;
         color: @color7;
         margin: 0;
         padding: 0 1rem 0 1rem;
