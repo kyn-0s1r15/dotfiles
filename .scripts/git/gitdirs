@@ -9,6 +9,7 @@
 ~/.config/rofi
 ~/.config/wal
 ~/.config/waybar
+~/.cache/wal
 ~/.icons
 ~/.local/share/applications
 ~/.oh-my-zsh
