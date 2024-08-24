@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/kyn/Pictures/Wallpapers/goku-moon.jpg"
+let background = "#080C15"
+let foreground = "#e3d5cc"
+let cursor     = "#e3d5cc"
+
+" Colors
+let color0  = "#080C15"
+let color1  = "#A86154"
+let color2  = "#D7976B"
+let color3  = "#5F7389"
+let color4  = "#8B7B87"
+let color5  = "#6C8EA5"
+let color6  = "#9F989F"
+let color7  = "#e3d5cc"
+let color8  = "#9e958e"
+let color9  = "#A86154"
+let color10 = "#D7976B"
+let color11 = "#5F7389"
+let color12 = "#8B7B87"
+let color13 = "#6C8EA5"
+let color14 = "#9F989F"
+let color15 = "#e3d5cc"
