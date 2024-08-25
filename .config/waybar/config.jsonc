@@ -87,7 +87,7 @@
         "custom/music" : {
           "format" : "  {}",
           "min-length": 4,
-//          "max-length": 69,
+          "max-length": 69,
           "escape" : false,
           "interval" : 1,
           "exec" : "playerctl metadata --format='{{ title }}'",
