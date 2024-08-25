@@ -149,7 +149,7 @@
           "tooltip-format-connected" : " {num_connections} {device_enumerate}",
           "tooltip-format-connected" : "{device_enumerate} {num_connections}",
           "tooltip-format-enumerate-connected" : "{device_alias}\t{device_address}",
-          "on-click" : "hyprctl dispatch exec '[float] kitty ~/.scripts/waybar/bluetoothctl.sh'",
+          "on-click" : "hyprctl dispatch exec '~/.scripts/waybar/bluetoothctl.sh'",
     },
   },
   {
