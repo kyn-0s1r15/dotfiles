@@ -18,7 +18,7 @@ else
     bluetoothctl power on
     sleep 1
     echo "Bluetooth is now on"
-    blueberry
+    hyprctl dispatch exec "[float] blueberry"
     sleep 1
     echo "Blueberry on"
 fi
