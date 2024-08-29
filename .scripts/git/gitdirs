@@ -15,7 +15,6 @@
 ~/.oh-my-zsh
 ~/.scripts
 ~/DEV
-~/.tutorials.txt
 ~/.p10k.zsh
 ~/.zshrc
 ~/.config/nixos/configuration.nix
