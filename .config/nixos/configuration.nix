@@ -47,6 +47,8 @@ config = {
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      todoist-electron
+      libreoffice
       gimp
       dune3d
       obsidian
