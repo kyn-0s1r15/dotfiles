@@ -10,7 +10,7 @@ config = {
 #  boot.loader.timeout = 4;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernalPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
 #  boot.kernelParams = [ "tsc=unstable" "vga=current" "vt.global_cursor_default=0" "boot.shell_on_fail" "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
   boot.initrd.systemd.dbus.enable = true;
