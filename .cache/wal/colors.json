@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/kyn/Pictures/Wallpapers/goku-moon.jpg",
+    "wallpaper": "/home/kyn/Pictures/Wallpapers/Kame_house1920x1080.jpg",
     "alpha": "100",
 
     "special": {
-        "background": "#080C15",
-        "foreground": "#e3d5cc",
-        "cursor": "#e3d5cc"
+        "background": "#121948",
+        "foreground": "#e9cbc0",
+        "cursor": "#e9cbc0"
     },
     "colors": {
-        "color0": "#080C15",
-        "color1": "#A86154",
-        "color2": "#D7976B",
-        "color3": "#5F7389",
-        "color4": "#8B7B87",
-        "color5": "#6C8EA5",
-        "color6": "#9F989F",
-        "color7": "#e3d5cc",
-        "color8": "#9e958e",
-        "color9": "#A86154",
-        "color10": "#D7976B",
-        "color11": "#5F7389",
-        "color12": "#8B7B87",
-        "color13": "#6C8EA5",
-        "color14": "#9F989F",
-        "color15": "#e3d5cc"
+        "color0": "#121948",
+        "color1": "#324DA0",
+        "color2": "#5867A2",
+        "color3": "#9C748C",
+        "color4": "#7785A9",
+        "color5": "#6790DB",
+        "color6": "#AEA5BA",
+        "color7": "#e9cbc0",
+        "color8": "#a38e86",
+        "color9": "#324DA0",
+        "color10": "#5867A2",
+        "color11": "#9C748C",
+        "color12": "#7785A9",
+        "color13": "#6790DB",
+        "color14": "#AEA5BA",
+        "color15": "#e9cbc0"
     }
 }
