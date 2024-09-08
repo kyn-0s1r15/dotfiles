@@ -10,14 +10,11 @@ config = {
 #  boot.loader.timeout = 4;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
 #  boot.kernelParams = [ "tsc=unstable" "vga=current" "vt.global_cursor_default=0" "boot.shell_on_fail" "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
-  boot.initrd.systemd.dbus.enable = true;
+#  boot.initrd.systemd.dbus.enable = true;
 #  services.kmscon.enable = true;
 #  services.kmscon.hwRender = true;
 #  services.picom.vSync = true;
-
 #  nixpkgs.config.nvidia.acceptLicense = true;
 #  hardware.opengl.enable = true;
 #  hardware.opengl.driSupport = true;
@@ -50,6 +47,8 @@ config = {
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      todoist-electron
+      libreoffice
       gimp
       dune3d
       obsidian
