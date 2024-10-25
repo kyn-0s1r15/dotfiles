@@ -10,6 +10,7 @@ config = {
 #  boot.loader.timeout = 4;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+#  boot.kernelPackages = pkgs.linuxPackages_latest;
 #  boot.kernelParams = [ "tsc=unstable" "vga=current" "vt.global_cursor_default=0" "boot.shell_on_fail" "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 #  boot.initrd.systemd.dbus.enable = true;
 #  services.kmscon.enable = true;
@@ -55,6 +56,7 @@ config = {
       vesktop
       obs-studio
       brave
+      zoom-us
     ];
   };
 
@@ -84,10 +86,11 @@ config = {
   programs.firefox.package = pkgs.firefox-wayland;
   services.deluge.enable = true;
   environment.systemPackages = with pkgs; [
+  (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
     clipse mako udiskie usbutils gammastep kitty fzf bemenu mpvpaper wlogout
     eww wallust pywal ripgrep bc python2 python3 python-qt gtk-layer-shell
     blueberry brightnessctl playerctl rofi-wayland grim slurp bottles lutris
-    wine-wayland winetricks egl-wayland wayland-utils mangohud
+    wine-wayland winetricks egl-wayland wayland-utils mangohud tangram
     krabby neofetch pciutils lshw wl-clipboard ntfs3g hyprpicker hyprpaper hyprcursor]; # $ nix search
   fonts.packages = with pkgs; [nerdfonts font-awesome material-design-icons];
 
