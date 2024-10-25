@@ -3,11 +3,11 @@
 
 cd ~/
 
-git config --global init.defaultBranch <branch>
-git config --global user.name <name>
-git config --global user.email <email>
+git config --global init.defaultBranch main
+git config --global user.name kyn-0s1r15
+git config --global user.email mrkynastonblake@gmail.com
 git init
-git remote add <repo-name> <ssh-link>
+git remote add dotfiles git@github.com:kyn-0s1r15/dotfiles.git
 
 rm -r ~/.cache/wal
 rm -r ~/.config/hypr
@@ -24,4 +24,4 @@ rm -r ~/DEV
 rm ~/LICENSE
 rm ~/README.md
 
-git pull <repo-name> <branch>
+git pull dotfiles main
