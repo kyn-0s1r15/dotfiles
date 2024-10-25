@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kyn/Pictures/Wallpapers/Skyairt7.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0c0f18",
+        "foreground": "#9baabe",
+        "cursor": "#9baabe"
+    },
+    "colors": {
+        "color0": "#0c0f18",
+        "color1": "#234E64",
+        "color2": "#614C68",
+        "color3": "#AB4A41",
+        "color4": "#A14E5F",
+        "color5": "#DC5F5B",
+        "color6": "#F0915A",
+        "color7": "#9baabe",
+        "color8": "#6c7685",
+        "color9": "#234E64",
+        "color10": "#614C68",
+        "color11": "#AB4A41",
+        "color12": "#A14E5F",
+        "color13": "#DC5F5B",
+        "color14": "#F0915A",
+        "color15": "#9baabe"
+    }
+}
